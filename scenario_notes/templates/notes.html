@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Заметки</title>
+    <style>
+        body{
+            overflow-y: scroll;
+            background: url("/static/images/bg_menu.jpg") repeat;
+            background-size: cover;
+        }
+        .container{
+            margin: 0;
+            padding: 0;
+            width: 800px;
+            height: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-right: -50%;
+            transform: translate(-50%, -50%);
+        }
+        .row{
+            background: url("/static/images/note6.png") no-repeat;
+            background-size: contain;
+            height: 100%;
+            width: 100%;
+            margin-top: 15%;
+            margin-left: 7%;
+        }
+         .lps input{
+            outline: none;
+            height: 50px;
+            width: 250px;
+            margin-bottom: 20px;
+            margin-left: 35%;
+            padding-left: 18px;
+            border-radius: 20px;
+            border: none;
+            font-size: 20px;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.82);
+        }
+        .lps input:hover{
+            transform: scale(0.9);
+        }
+        .lps input:focus{
+            transform: scale(0.9);
+        }
+        .note_but input{
+            outline: none;
+            height: 25px;
+            width: 125px;
+            margin-bottom: 5px;
+            margin-left: 35%;
+            padding-left: 18px;
+            border-radius: 20px;
+            border: none;
+            font-size: 14px;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.82);
+        }
+        .note_but input:hover{
+            transform: scale(0.9);
+        }
+        .note_but input:focus{
+            transform: scale(0.9);
+        }
+        .text{
+            font-size: 13px;
+            width: 395px;
+            margin-left: 18%;
+            margin-top: 15%;
+            height: 475px;
+        }
+        .exit a{
+            margin-left: 33%;
+            color: white;
+            font-size: 35pt;
+            text-decoration: none;
+        }
+        .exit a:hover{
+            font-size: 35pt;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+{% import 'notes_utils.html' as utils %}
+<h1 style="color:white; margin-left: 45%;">Список заметок</h1>
+<div class="container">
+    {% if notes %}
+        {% for note in notes %}
+            <div class="row">
+                {{ utils.render_note(note) }}
+            </div>
+        {% endfor %}
+    {% else %}
+        <p style="color:white; font-size: 20pt; margin-left: 45%; margin-top: 15%;">Нет заметок</p>
+    {% endif %}
+
+    <div class="lps">
+        <form action="" method="POST">
+            <input type="hidden" name="id_user" value=" {{ id_user }}">
+            <input type="submit" name="action" class="button" value="Добавить заметку">
+        </form>
+    </div>
+
+    <div class="exit">
+            <a href="http://127.0.0.1:5001/">Выход в меню</a>
+    </div>
+</div>
+</body>
+</html>

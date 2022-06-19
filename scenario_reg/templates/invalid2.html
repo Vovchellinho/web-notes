@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ошибка авторизации</title>
+        <style>
+        body{
+            color: black;
+            background: url("/static/images/bg_menu.jpg") no-repeat;
+            background-size: cover;
+        }
+        .container{
+            background: url("/static/images/note2.png") no-repeat;
+            background-size: contain;
+            margin: 0;
+            padding: 0;
+            height: 700px;
+            width: 650px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-right: -50%;
+            transform: translate(-50%, -50%) }
+        }
+        .header.row{
+            color: black;
+        }
+        .row a{
+            color: black;
+            font-size: 35pt;
+            text-decoration: none;
+        }
+        .row a:hover{
+            font-size: 35pt;
+            color: blue;
+        }
+        .header{
+            transform: rotate(2deg);
+            font-size: 15pt;
+            color: black;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .bot{
+            transform: rotate(2deg);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header" style="margin-top: 98px; margin-left:20px;">
+        <p>Пользователь с таким логином уже существует</p>
+    </div>
+    <div class="bot">
+        <div class="row" style="margin-bottom: 20px;">
+            <a href="{{url_for('auth_app.login_page')}}">Авторизация</a>
+        </div>
+        <div class="row" style="margin-bottom: 20px;">
+            <a href="{{url_for('reg_app.reg_page')}}">Регистрация</a>
+        </div>
+        <div class="row">
+            <a href="http://127.0.0.1:5001/">Выход в меню</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

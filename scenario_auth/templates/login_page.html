@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Авторизация</title>
+    <style>
+        body{
+            background: url("/static/images/bg_menu.jpg") no-repeat;
+            background-size: cover;
+        }
+        .lps p{
+            text-transform: uppercase;
+            color: white;
+            text-decoration: none;
+            font-size: 30px;
+        }
+        .lps{
+            transform: rotate(-3deg);
+            width: 350px;
+            margin-bottom: 3px;
+            text-align: center;
+            border-radius: 10px;
+        }
+        .container{
+            background: url("/static/images/note3.png") no-repeat;
+            object-fit: cover;
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-right: -50%;
+            transform: translate(-50%, -50%);
+        }
+        .lps input{
+            outline: none;
+            height: 50px;
+            width: 250px;
+            margin-bottom:20px;
+            padding-left: 18px;
+            border-radius: 20px;
+            border: none;
+            font-size: 20px;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.82);
+        }
+        .lps input:hover{
+            transform: scale(0.9);
+        }
+        .lps input:focus{
+            transform: scale(0.9);
+        }
+        INPUT.but{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <form action="" method="POST">
+        <div class="lps" style="margin-top:60px;height: 100px; margin-bottom; 0px;">
+         <p>Имя пользователя</p>
+            <input type="text" name="login">
+        </div>
+        <div class="lps" style="margin-top: 50px; height: 100px;">
+            <p>Пароль</p>
+            <input type="password" name="password">
+        </div>
+        <div class="lps" style="transform: rotate(0);margin-top: 200px; border-style: none; padding-bottom: 20px;">
+            <input type="submit" value="Войти">
+        </div>
+    </form>
+</div>
+</body>
+</html>

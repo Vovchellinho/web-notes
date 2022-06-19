@@ -1,0 +1,18 @@
+{% macro render_note(note) %}
+<div>
+    <h2 style="color:white; margin-left: 37%;">Заметка {{note['id_note']}}</h2>
+    <p class="text">
+        <span>{{ note['text'] }}</span>
+    </p>
+    <div class="buttons_notes" style="margin-top: 5%;">
+        <form class="note_but" action="" method="POST">
+            <input type="hidden" name="id_note" value="{{note['id_note']}}">
+            <input type="submit" name="action" class="button" value="Редактировать">
+        </form>
+        <form class="note_but" action="" method="POST">
+            <input type="hidden" name="id_note" value="{{note['id_note']}}">
+            <input  type="submit" name="action" class="button" value="Удалить">
+        </form>
+    </div>
+</div>
+{% endmacro %}

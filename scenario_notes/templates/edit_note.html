@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Редактирование заметки</title>
+    <style>
+        body{
+            background: url("/static/images/bg_menu.jpg") repeat;
+            background-size: cover;
+            color: white;
+        }
+        .container{
+            margin: 0;
+            padding: 0;
+            width: 900px;
+            height: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-right: -50%;
+            transform: translate(-50%, -50%);
+        }
+        .row{
+            background: url("/static/images/note6.png") no-repeat;
+            background-size: contain;
+            height: 750px;
+            width: 900px;
+            margin-left: 15%;
+        }
+        textarea{
+            outline: none;
+            font-size: 13px;
+            width: 390px;
+            margin-left: 16%;
+            margin-top: 16%;
+            height: 465px;
+            resize: none;
+            wrap: soft;
+        }
+        textarea:focus{
+            outline:none;
+        }
+        input{
+            outline: none;
+            height: 25px;
+            width: 125px;
+            margin-bottom: 5px;
+            margin-left: 35%;
+            padding-left: 18px;
+            border-radius: 20px;
+            border: none;
+            font-size: 14px;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.82);
+        }
+        input:hover{
+            transform: scale(0.9);
+        }
+        input:focus{
+            transform: scale(0.9);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form action="{{url_for('notes_app.update_note')}}" method="POST">
+            <div class="row">
+                <textarea style="margin-bottom: 50px;" name="text_note">{{ note_text }}</textarea>
+                <input type="hidden" name="id_note" value="{{ id_note }}">
+                <input type="submit" style="margin-left: 30%;" name="action" class="button" value="Сохранить">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
