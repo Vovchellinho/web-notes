@@ -18,32 +18,6 @@ USE `notes`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `notes_list`
---
-
-DROP TABLE IF EXISTS `notes_list`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `notes_list` (
-  `id_user` int NOT NULL,
-  `id_note` int NOT NULL,
-  `text` text,
-  PRIMARY KEY (`id_user`,`id_note`),
-  CONSTRAINT `id_user` FOREIGN KEY (`id_user`) REFERENCES `users` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `notes_list`
---
-
-LOCK TABLES `notes_list` WRITE;
-/*!40000 ALTER TABLE `notes_list` DISABLE KEYS */;
-INSERT INTO `notes_list` VALUES (1,1,'Привет, я Вова!!'),(1,2,'Закрыть экзамены и отметить с Катей закрытие сессии!'),(1,3,'Погулять ночью с Катей по Питеру!'),(2,1,'Привет, я Катя!!'),(2,2,'Заказать продукты домой!'),(2,3,'Приготовить хачапури в Питере!');
-/*!40000 ALTER TABLE `notes_list` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `users`
 --
 
@@ -77,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-06-19 21:48:17
+-- Dump completed on 2022-06-20 21:22:18
