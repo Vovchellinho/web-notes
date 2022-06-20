@@ -10,7 +10,7 @@
             background-size: cover;
         }
         .container{
-            background: url("/static/images/note2.png") no-repeat;
+            background: url("/static/images/note4.png") no-repeat;
             background-size: contain;
             margin: 0;
             padding: 0;
@@ -48,23 +48,23 @@
 </head>
 <body>
 <div class="container">
-    <div class="header" style="margin-top: 120px;">
+    <div class="header" style="margin-top: 110px;">
         {% if items %}
-            <div class="row" style="margin-bottom: 50px;">Вы авторизованы под пользователем:
+            <div class="row" style="margin-bottom: 65px;">Вы авторизованы под пользователем:
                 <span style="color: blue;">{{items[0]}}</span>
             </div>
-            <div class="row" style="margin-top: 35px; margin-bottom: 45px;" >
+            <div class="row" style="margin-top: 35px; margin-bottom: 30px;" >
                 <a href="{{url_for('notes_app.notes_list')}}">Заметки</a>
             </div>
         {% else %}
-            <div class="row" style="margin-bottom: 50px;">Вы не авторизованы</div>
+            <div class="row" style="margin-bottom: 37px;">Вы не авторизованы</div>
         {% endif %}
     </div>
     <div class="bot">
-        <div class="row" style="margin-bottom: 20px;">
+        <div class="row" style="margin-bottom: 30px;">
             <a href="{{url_for('auth_app.login_page')}}">Авторизация</a>
         </div>
-        <div class="row" style="margin-bottom: 20px;">
+        <div class="row" style="margin-bottom: 30px;">
             <a href="{{url_for('reg_app.reg_page')}}">Регистрация</a>
         </div>
         <div class="row">
